@@ -32,7 +32,7 @@ steps:
     arguments: 'name'
     workingDirectory: '/tmp'
     failOnStderr: true
-- task: Bash2@4
+- task: Bash@4
   inputs:
     filePath: 'ls -l '
     arguments: 'name'
