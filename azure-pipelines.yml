@@ -4,7 +4,8 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
 
 trigger:
-- master
+- develop
+
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -25,3 +26,15 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
+- task: Bash@3
+  inputs:
+    filePath: 'ls -l '
+    arguments: 'name'
+    workingDirectory: '/tmp'
+    failOnStderr: true
+- task: Bash2@4
+  inputs:
+    filePath: 'ls -l '
+    arguments: 'name'
+    workingDirectory: '/'
+    failOnStderr: true
